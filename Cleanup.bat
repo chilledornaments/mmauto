@@ -2,6 +2,56 @@
 
 :top
 
+:user
+echo %username% > "C:\user.txt"
+set /p u=<"C:\user.txt"
+if /I "%u%" EQU "Sharpshooter" (
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  shutdown.exe /s /t 10
+)
+if /I "%u%" EQU "Sharpshooter " (
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  shutdown.exe /s /t 10
+)
+if /I "%u%" EQU "itsupport" (
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  shutdown.exe /s /t 10
+)
+if /I "%u%" EQU "itsupport " (
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  echo These accounts have been renamed incorrectly. Reimage computer.
+  timeout /t 5
+  shutdown.exe /s /t 10
+) else (
+  goto phoenix
+)
+
 :phoenix
 echo Starting Cleanup
 timeout /t 5
@@ -20,9 +70,23 @@ if exist "C:\programdata\phoenix" (
   rd /S /Q "C:\programdata\phoenix"
   echo Checking for CaptureMagic
   goto capture
- ) else (
-  echo No Phoenix storage found. Moving on
+)
+if exist "C:\Phoenix" (
+ echo Found Phoenix storage. Cleaning up.
+ timeout /t 5
+ rd /S /Q "C:\Phoenix"
+ echo Checking for CaptureMagic
+ goto capture
+)
+if exist "X:\Phoenix" (
+  echo Found Phoenix Storage. Cleaning up.
+  timeout /t 5
+  rd /S /Q "X:\Phoenix"
+  echo Checking for CaptureMagic
   goto capture
+) else (
+echo No Phoenix storage found. Moving on
+goto capture
 )
 
 :capture
@@ -83,6 +147,8 @@ if "%ans%" EQU "n" (
   timeout /t 3
   exit 0
 )
+
+REM check for sharpshooter, deletee sharpshooter, make user
 
 if "%ans%" EQU "y" (
   goto finalizerename
