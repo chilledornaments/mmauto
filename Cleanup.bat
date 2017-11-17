@@ -5,7 +5,7 @@
 :user
 echo %username% > "C:\user.txt"
 set /p u=<"C:\user.txt"
-if /I "%u%" EQU "Sharpshooter" (
+if /I "%u%" EQU "1" (
   echo These accounts have been renamed incorrectly. Reimage computer.
   timeout /t 5
   echo These accounts have been renamed incorrectly. Reimage computer.
@@ -16,7 +16,7 @@ if /I "%u%" EQU "Sharpshooter" (
   timeout /t 5
   shutdown.exe /s /t 10
 )
-if /I "%u%" EQU "Sharpshooter " (
+if /I "%u%" EQU "1 " (
   echo These accounts have been renamed incorrectly. Reimage computer.
   timeout /t 5
   echo These accounts have been renamed incorrectly. Reimage computer.
@@ -27,7 +27,7 @@ if /I "%u%" EQU "Sharpshooter " (
   timeout /t 5
   shutdown.exe /s /t 10
 )
-if /I "%u%" EQU "itsupport" (
+if /I "%u%" EQU "2" (
   echo These accounts have been renamed incorrectly. Reimage computer.
   timeout /t 5
   echo These accounts have been renamed incorrectly. Reimage computer.
@@ -38,7 +38,7 @@ if /I "%u%" EQU "itsupport" (
   timeout /t 5
   shutdown.exe /s /t 10
 )
-if /I "%u%" EQU "itsupport " (
+if /I "%u%" EQU "2 " (
   echo These accounts have been renamed incorrectly. Reimage computer.
   timeout /t 5
   echo These accounts have been renamed incorrectly. Reimage computer.
@@ -116,8 +116,8 @@ goto installdir
 :installdir
 echo Cleaning up install directory
 timeout /t 5
-if exist "C:\Program Files (x86)\Magic Memories" (
-  rd /S /Q "C:\Program Files (x86)\Magic Memories"
+if exist "C:\Program Files (x86)\DIR" (
+  rd /S /Q "C:\Program Files (x86)\DIR"
   echo Install directory cleaned. Moving on.
   timeout /t 5
   goto chrome
