@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "Venue (WK or SP): $1"
-echo "Premium or Standard codes? (p/s): $2"
+echo "Premium or Standard codes? (P/S): $2"
 echo "Reading barcodes"
 WRITEDATE=$(date +%Y-%m-%d)
-if [[ $2 = *s* ]]; then
+if [[ ${2,,} = *s* ]]; then
 price=45.00
 else
 price=65.00
