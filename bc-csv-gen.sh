@@ -1,14 +1,20 @@
 #!/bin/bash
-echo "Venue (WK or SP): $1"
-echo "Premium or Standard codes? (P/S): $2"
-echo "Reading barcodes"
 WRITEDATE=$(date +%Y-%m-%d)
+if [ $# -le 1 ]; then
+echo "Usage: ./script VenueCode Premium/Standard /path/to/barcode.csv" 
+echo "Example: ./barcode.sh WK PREMIUM /opt/barcode/bc.csv"
+exit 0
+fi
 if [[ ${2,,} = *s* ]]; then
 price=45.00
 else
 price=65.00
 fi
-sed 's/,//g' stori-bc.csv > $1-$2-$WRITEDATE-plain-barcodes\.csv
+sed 's/,//g' $3 > $1-$2-$WRITEDATE-plain-barcodes\.csv
+echo "Venue (WK or SP): $1"
+echo "Premium or Standard codes? (P/S): $2"
+echo "Path to original barcode: $3"
+echo "Reading barcodes"
 sleep 10
 #let sed do its thing
 while read L; do
