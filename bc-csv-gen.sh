@@ -1,6 +1,6 @@
 #!/bin/bash
 WRITEDATE=$(date +%Y-%m-%d)
-if [ $# -le 1 ]; then
+if [ $# -le 2 ]; then
 echo "Usage: ./script VenueCode Premium/Standard /path/to/barcode.csv" 
 echo "Example: ./barcode.sh WK PREMIUM /opt/barcode/bc.csv"
 exit 0
