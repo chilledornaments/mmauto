@@ -1,7 +1,7 @@
 #!/bin/bash
 WRITEDATE=$(date +%Y-%m-%d)
 if [ "$1" = "--help" ] || [ "$#" -lt "3" ] || [ "$#" -gt "3" ] || [ "$1" = "-h" ]; then
-echo "Usage: $0 VenueCode Premium/Standard /path/to/barcode.csv" 
+echo "Usage: $0 [VenueCode] [Premium/Standard] [/path/to/file.csv]" 
 exit
 fi
 if [[ ${2,,} = *s* ]]; then
