@@ -1,4 +1,6 @@
+@echo off
 REM run off of USB
-copy "%~d0\*.war" "E:\workflowserver\updates"
-
-call "E:\workflowserver\setup.bat" UPDATE
+REM run as admin
+REM quote the filepath
+copy "*.war" "%~1\updates\"
+call "%~1\setup.bat" UPDATE
