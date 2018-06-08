@@ -1,1 +1,0 @@
-move "%~d0\produce.war" "W:\workflowserver\updates"
